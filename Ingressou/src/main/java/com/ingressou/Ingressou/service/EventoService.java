@@ -3,12 +3,12 @@ package com.ingressou.Ingressou.service;
 import com.ingressou.Ingressou.model.Evento;
 import com.ingressou.Ingressou.repository.EventoRepository;
 import org.springframework.stereotype.Service;
-
 import jakarta.annotation.PostConstruct;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class EventoService {
@@ -18,8 +18,40 @@ public class EventoService {
         this.eventoRepository = eventoRepository;
     }
 
+    // Listar todos os eventos
     public List<Evento> listarTodos() {
         return eventoRepository.findAll();
+    }
+
+    // Criar um novo evento
+    public Evento criarEvento(Evento evento) {
+        return eventoRepository.save(evento);
+    }
+
+    // Atualizar um evento existente
+    public Evento atualizarEvento(Integer id, Evento eventoAtualizado) {
+        // Verifica se o evento existe
+        Optional<Evento> eventoExistente = eventoRepository.findById(id);
+        if (eventoExistente.isPresent()) {
+            Evento evento = eventoExistente.get();
+            evento.setNome(eventoAtualizado.getNome());
+            evento.setDescricao(eventoAtualizado.getDescricao());
+            evento.setDataEvento(eventoAtualizado.getDataEvento());
+            evento.setLocalEvento(eventoAtualizado.getLocalEvento());
+            evento.setFaixaEtaria(eventoAtualizado.getFaixaEtaria());
+            evento.setImagemUrl(eventoAtualizado.getImagemUrl());
+            evento.setHoraAbertura(eventoAtualizado.getHoraAbertura());
+            evento.setHoraInicio(eventoAtualizado.getHoraInicio());
+            evento.setCapacidade(eventoAtualizado.getCapacidade());
+            evento.setQuantidadeIngressos(eventoAtualizado.getQuantidadeIngressos());
+            return eventoRepository.save(evento);
+        }
+        return null; // Retorna null se o evento não foi encontrado
+    }
+
+    // Deletar um evento existente
+    public void deletarEvento(Integer id) {
+        eventoRepository.deleteById(id);
     }
 
     @PostConstruct
@@ -59,5 +91,30 @@ public class EventoService {
         } else {
             System.out.println("Eventos já existem no banco de dados. Nenhum evento de teste criado.");
         }
+    }
+
+    // Método para calcular a disponibilidade de ingressos
+    public int calcularDisponibilidade(Integer id) {
+        Optional<Evento> eventoOptional = eventoRepository.findById(id);
+        if (eventoOptional.isPresent()) {
+            Evento evento = eventoOptional.get();
+            return evento.calcularIngressosDisponiveis(); // Usando o método existente
+        }
+        return 0; // Se o evento não existir, a disponibilidade é 0
+    }
+
+    // Método para listar as informações do evento como String
+    public String listar(Integer id) {
+        Optional<Evento> eventoOptional = eventoRepository.findById(id);
+        if (eventoOptional.isPresent()) {
+            Evento evento = eventoOptional.get();
+            return evento.listar(); // Chamando o método listar da classe Evento
+        }
+        return "Evento não encontrado!";
+    }
+
+    // Método para selecionar um evento baseado no ID
+    public Evento selecionarEvento(Integer id) {
+        return eventoRepository.findById(id).orElse(null); // Retorna o evento ou null se não encontrado
     }
 }

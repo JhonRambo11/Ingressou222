@@ -159,6 +159,14 @@ public class Evento {
         return capacidade - quantidadeIngressos;
     }
 
+    // Método para listar as informações do evento
+    public String listar() {
+        return "Nome: " + nome +
+                ", Data: " + dataEvento +
+                ", Local: " + localEvento +
+                ", Disponibilidade: " + calcularIngressosDisponiveis() + " ingressos disponíveis.";
+    }
+
     @Override
     public String toString() {
         return "Evento{" +
