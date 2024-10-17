@@ -5,11 +5,28 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="48a6ed81-9e7e-44f8-a209-a73f41770d8a" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/Ingressou/src/test/java/com/ingressou/Ingressou/EventoTest.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/config/SecurityConfig.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/controller/IngressoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/controller/PedidoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/controller/TipoIngressoController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/controller/UsuarioController.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/repository/IngressoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/repository/PedidoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/repository/TipoIngressoRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/repository/UsuarioRepository.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/service/IngressoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/service/PedidoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/service/TipoIngressoService.java" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/service/UsuarioService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ingressou/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ingressou/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/controller/EventoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/controller/EventoController.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/model/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/model/Evento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/model/Ingressos.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/model/Ingresso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/model/TipoIngresso.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/model/TipoIngresso.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/model/Usuario.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/model/Usuario.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/repository/EventoRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/repository/EventoRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/service/EventoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/service/EventoService.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -95,6 +112,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
+    "git-widget-placeholder": "master-versão1.1",
     "kotlin-language-version-configured": "true",
     "last_opened_file_path": "C:/Users/celo1/OneDrive/Área de Trabalho/PROJETOS/Ingressou222JAVAFX",
     "project.structure.last.edited": "Modules",
@@ -112,7 +130,7 @@
       <recent name="com.ingressou.Ingressou" />
     </key>
   </component>
-  <component name="RunManager" selected="JUnit.EventoTest.testListar">
+  <component name="RunManager" selected="Application.IngressouApplication (1)">
     <configuration name="IngressouApplication (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
       <option name="MAIN_CLASS_NAME" value="com.ingressou.Ingressou.IngressouApplication" />
       <module name="Ingressou" />
@@ -226,11 +244,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Application.IngressouApplication (1)" />
         <item itemvalue="JUnit.EventoTest.testListar" />
         <item itemvalue="JUnit.EventoTest.testSetNome" />
         <item itemvalue="JUnit.EventoTest" />
         <item itemvalue="JUnit.EventoTest.testCalcularIngressosDisponiveisComTodosIngressosVendidos" />
-        <item itemvalue="Application.IngressouApplication (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -259,7 +277,15 @@
       <option name="project" value="LOCAL" />
       <updated>1728869677976</updated>
     </task>
-    <option name="localTasksCounter" value="3" />
+    <task id="LOCAL-00003" summary="Adicionadas todas as classes">
+      <option name="closed" value="true" />
+      <created>1729029348440</created>
+      <option name="number" value="00003" />
+      <option name="presentableId" value="LOCAL-00003" />
+      <option name="project" value="LOCAL" />
+      <updated>1729029348440</updated>
+    </task>
+    <option name="localTasksCounter" value="4" />
     <servers />
   </component>
   <component name="Vcs.Log.Tabs.Properties">

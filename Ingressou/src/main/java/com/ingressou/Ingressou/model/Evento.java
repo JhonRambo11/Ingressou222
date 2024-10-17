@@ -45,7 +45,7 @@ public class Evento {
     private int quantidadeIngressos;
 
     @OneToMany(mappedBy = "evento") // Relacionamento com Ingressos (ajuste conforme necessário)
-    private List<Ingressos> ingressos;
+    private List<Ingresso> ingressos;
 
     // Construtor padrão
     public Evento() {}

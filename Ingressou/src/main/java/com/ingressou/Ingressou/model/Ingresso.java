@@ -3,10 +3,11 @@ package com.ingressou.Ingressou.model;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
+import java.time.LocalDateTime;
 
 @Entity
 @Table(name = "tbingresso")
-public class Ingressos {
+public class Ingresso {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,17 +26,31 @@ public class Ingressos {
     @JoinColumn(name = "CDTIPOINGRESSO", nullable = false)
     private TipoIngresso tipoIngresso;
 
-    @Column(name = "DTHRCOMPRA", nullable = false)
-    private java.sql.Timestamp dataCompra;
+    @Column(name = "DTHRCOMPRA")
+    private LocalDateTime dataHoraCompra;
 
-    @Column(name = "QTDCOMPRA", nullable = false)
-    private Integer quantidadeCompra;
+    @Column(name = "QTDCOMPRA")
+    private int quantidadeCompra;
 
-    @Column(name = "VLTOTALCOMPRA", nullable = false)
+    @Column(name = "VLTOTALCOMPRA")
     private BigDecimal valorTotalCompra;
 
-    // Getters e Setters
+    // Construtor padrão
+    public Ingresso() {}
 
+    // Construtor com parâmetros
+
+    public Ingresso(Integer idIngresso, Usuario usuario, Evento evento, TipoIngresso tipoIngresso, LocalDateTime dataHoraCompra, int quantidadeCompra, BigDecimal valorTotalCompra) {
+        this.idIngresso = idIngresso;
+        this.usuario = usuario;
+        this.evento = evento;
+        this.tipoIngresso = tipoIngresso;
+        this.dataHoraCompra = dataHoraCompra;
+        this.quantidadeCompra = quantidadeCompra;
+        this.valorTotalCompra = valorTotalCompra;
+    }
+
+    // Getters e Setters
     public Integer getIdIngresso() {
         return idIngresso;
     }
@@ -68,19 +83,19 @@ public class Ingressos {
         this.tipoIngresso = tipoIngresso;
     }
 
-    public java.sql.Timestamp getDataCompra() {
-        return dataCompra;
+    public LocalDateTime getDataHoraCompra() {
+        return dataHoraCompra;
     }
 
-    public void setDataCompra(java.sql.Timestamp dataCompra) {
-        this.dataCompra = dataCompra;
+    public void setDataHoraCompra(LocalDateTime dataHoraCompra) {
+        this.dataHoraCompra = dataHoraCompra;
     }
 
-    public Integer getQuantidadeCompra() {
+    public int getQuantidadeCompra() {
         return quantidadeCompra;
     }
 
-    public void setQuantidadeCompra(Integer quantidadeCompra) {
+    public void setQuantidadeCompra(int quantidadeCompra) {
         this.quantidadeCompra = quantidadeCompra;
     }
 
@@ -90,5 +105,15 @@ public class Ingressos {
 
     public void setValorTotalCompra(BigDecimal valorTotalCompra) {
         this.valorTotalCompra = valorTotalCompra;
+    }
+
+    // Método para obter o preço do ingresso (referente ao preço do tipo de ingresso)
+    public BigDecimal getPreco() {
+        return this.tipoIngresso != null ? this.tipoIngresso.getPrecoBase() : BigDecimal.ZERO;
+    }
+
+    // Método para calcular o valor total do ingresso baseado na quantidade e tipo
+    public BigDecimal multiplicarTipo() {
+        return getPreco().multiply(BigDecimal.valueOf(this.quantidadeCompra));
     }
 }

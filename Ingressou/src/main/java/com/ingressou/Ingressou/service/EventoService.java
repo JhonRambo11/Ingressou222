@@ -2,11 +2,12 @@ package com.ingressou.Ingressou.service;
 
 import com.ingressou.Ingressou.model.Evento;
 import com.ingressou.Ingressou.repository.EventoRepository;
-import org.springframework.stereotype.Service;
 import jakarta.annotation.PostConstruct;
+import org.springframework.stereotype.Service;
 
 import java.time.LocalDate;
 import java.time.LocalTime;
+import java.time.format.DateTimeParseException;
 import java.util.List;
 import java.util.Optional;
 
@@ -18,19 +19,18 @@ public class EventoService {
         this.eventoRepository = eventoRepository;
     }
 
-    // Listar todos os eventos
+    // Lista todos os eventos
     public List<Evento> listarTodos() {
         return eventoRepository.findAll();
     }
 
-    // Criar um novo evento
+    // Cria um novo evento
     public Evento criarEvento(Evento evento) {
         return eventoRepository.save(evento);
     }
 
-    // Atualizar um evento existente
+    // Atualiza um evento existente
     public Evento atualizarEvento(Integer id, Evento eventoAtualizado) {
-        // Verifica se o evento existe
         Optional<Evento> eventoExistente = eventoRepository.findById(id);
         if (eventoExistente.isPresent()) {
             Evento evento = eventoExistente.get();
@@ -46,12 +46,28 @@ public class EventoService {
             evento.setQuantidadeIngressos(eventoAtualizado.getQuantidadeIngressos());
             return eventoRepository.save(evento);
         }
-        return null; // Retorna null se o evento não foi encontrado
+        return null;
     }
 
-    // Deletar um evento existente
+    // Deleta um evento existente
     public void deletarEvento(Integer id) {
         eventoRepository.deleteById(id);
+    }
+
+    // Método para listar eventos com filtros opcionais
+    public List<Evento> listarEventosFiltrados(String nome, String localEvento, String data) {
+        LocalDate dataEvento = null;
+
+        // Validação da data
+        if (data != null && !data.isEmpty()) {
+            try {
+                dataEvento = LocalDate.parse(data);
+            } catch (DateTimeParseException e) {
+                throw new IllegalArgumentException("Formato de data inválido. Use o formato yyyy-MM-dd.");
+            }
+        }
+
+        return eventoRepository.listarEventosFiltrados(nome, localEvento, dataEvento);
     }
 
     @PostConstruct
@@ -96,25 +112,18 @@ public class EventoService {
     // Método para calcular a disponibilidade de ingressos
     public int calcularDisponibilidade(Integer id) {
         Optional<Evento> eventoOptional = eventoRepository.findById(id);
-        if (eventoOptional.isPresent()) {
-            Evento evento = eventoOptional.get();
-            return evento.calcularIngressosDisponiveis(); // Usando o método existente
-        }
-        return 0; // Se o evento não existir, a disponibilidade é 0
+        return eventoOptional.map(Evento::calcularIngressosDisponiveis).orElse(0);
     }
 
     // Método para listar as informações do evento como String
     public String listar(Integer id) {
-        Optional<Evento> eventoOptional = eventoRepository.findById(id);
-        if (eventoOptional.isPresent()) {
-            Evento evento = eventoOptional.get();
-            return evento.listar(); // Chamando o método listar da classe Evento
-        }
-        return "Evento não encontrado!";
+        return eventoRepository.findById(id)
+                .map(Evento::listar)
+                .orElse("Evento não encontrado!");
     }
 
     // Método para selecionar um evento baseado no ID
     public Evento selecionarEvento(Integer id) {
-        return eventoRepository.findById(id).orElse(null); // Retorna o evento ou null se não encontrado
+        return eventoRepository.findById(id).orElse(null);
     }
 }

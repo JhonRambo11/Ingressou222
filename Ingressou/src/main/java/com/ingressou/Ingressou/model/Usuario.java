@@ -30,7 +30,7 @@ public class Usuario {
     private String email;
 
     @Column(name = "dssenha", columnDefinition = "CHAR(64)")
-    private char senha;
+    private char[] senha;
 
     @Column(name = "DOCUMENTO", nullable = false, unique = true)
     private String documento;
@@ -39,7 +39,7 @@ public class Usuario {
     public Usuario() {}
 
     // Construtor com parâmetros
-    public Usuario(String nomeUsuario, String cidade, String estado, String telefone, Integer idade, String email, char senha, String documento) {
+    public Usuario(String nomeUsuario, String cidade, String estado, String telefone, Integer idade, String email, char[] senha, String documento) {
         this.nomeUsuario = nomeUsuario;
         this.cidade = cidade;
         this.estado = estado;
@@ -107,11 +107,11 @@ public class Usuario {
         this.email = email;
     }
 
-    public char getSenha() {
+    public char[] getSenha() {
         return senha;
     }
 
-    public void setSenha(char senha) {
+    public void setSenha(char[] senha) {
         this.senha = senha;
     }
 
