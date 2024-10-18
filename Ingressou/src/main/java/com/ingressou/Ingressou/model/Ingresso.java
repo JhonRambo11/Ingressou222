@@ -1,5 +1,6 @@
 package com.ingressou.Ingressou.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 
 import java.math.BigDecimal;
@@ -26,6 +27,7 @@ public class Ingresso {
     @JoinColumn(name = "CDTIPOINGRESSO", nullable = false)
     private TipoIngresso tipoIngresso;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd HH:mm:ss")
     @Column(name = "DTHRCOMPRA")
     private LocalDateTime dataHoraCompra;
 

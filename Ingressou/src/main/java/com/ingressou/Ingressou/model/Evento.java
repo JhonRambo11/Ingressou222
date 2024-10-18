@@ -1,5 +1,6 @@
 package com.ingressou.Ingressou.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import java.time.LocalDate;
 import java.time.LocalTime;
@@ -20,6 +21,7 @@ public class Evento {
     @Column(name = "DSDESCRICAO", length = 500)
     private String descricao;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd")
     @Column(name = "DTEVENTO", nullable = false)
     private LocalDate dataEvento;
 
@@ -32,9 +34,11 @@ public class Evento {
     @Column(name = "IMEVENTOURL")
     private String imagemUrl;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm")
     @Column(name = "HRABERTURAEVENTO", nullable = false)
     private LocalTime horaAbertura;
 
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "HH:mm")
     @Column(name = "HRINICIO", nullable = false)
     private LocalTime horaInicio;
 

@@ -29,7 +29,7 @@ public class Usuario {
     @Column(name = "DSEMAIL", nullable = false, unique = true)
     private String email;
 
-    @Column(name = "dssenha", columnDefinition = "CHAR(64)")
+    @Column(name = "DSSENHA", columnDefinition = "CHAR(64)")
     private char[] senha;
 
     @Column(name = "DOCUMENTO", nullable = false, unique = true)
