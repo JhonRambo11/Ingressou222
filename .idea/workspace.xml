@@ -4,7 +4,14 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="48a6ed81-9e7e-44f8-a209-a73f41770d8a" name="Changes" comment="" />
+    <list default="true" id="48a6ed81-9e7e-44f8-a209-a73f41770d8a" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/Ingressou/src/test/java/com/ingressou/Ingressou/EventoTest.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ingressou/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/Ingressou/pom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/controller/EventoController.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/controller/EventoController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/model/Evento.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/model/Evento.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/service/EventoService.java" beforeDir="false" afterPath="$PROJECT_DIR$/Ingressou/src/main/java/com/ingressou/Ingressou/service/EventoService.java" afterDir="false" />
+    </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -22,10 +29,35 @@
   <component name="Git.Settings">
     <option name="RECENT_BRANCH_BY_REPOSITORY">
       <map>
-        <entry key="$PROJECT_DIR$" value="master" />
+        <entry key="$PROJECT_DIR$" value="master-versão1.0" />
       </map>
     </option>
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
+  </component>
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;history&quot;: [
+    {
+      &quot;state&quot;: &quot;MERGED&quot;,
+      &quot;assignee&quot;: &quot;JhonRambo11&quot;
+    }
+  ],
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;MERGED&quot;,
+    &quot;assignee&quot;: &quot;JhonRambo11&quot;
+  }
+}</component>
+  <component name="GithubPullRequestsUISettings">
+    <option name="selectedUrlAndAccountId">
+      <UrlAndAccount>
+        <option name="accountId" value="27b8cfa7-a78a-4d65-abf5-0da893cf98a2" />
+        <option name="url" value="https://github.com/JhonRambo11/Ingressou222.git" />
+      </UrlAndAccount>
+    </option>
+  </component>
+  <component name="JavaAutoRunManager">
+    <enabled-run-configurations>
+      <run-configuration type="JUnit" name="EventoTest.testSetNome" />
+    </enabled-run-configurations>
   </component>
   <component name="JpbToolWindowState">
     <option name="isToolWindowVisible" value="false" />
@@ -51,16 +83,20 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
-    "Application.IngressouApplication (1).executor": "Run",
+    "Application.IngressouApplication (1).executor": "Debug",
     "Application.IngressouApplication.executor": "Run",
     "Application.com.ingressou.Ingressou.principal.IngressouApplication.executor": "Debug",
     "DefaultHtmlFileTemplate": "HTML File",
+    "JUnit.EventoTest.executor": "Debug",
+    "JUnit.EventoTest.testCalcularIngressosDisponiveisComTodosIngressosVendidos.executor": "Debug",
+    "JUnit.EventoTest.testListar.executor": "Debug",
+    "JUnit.EventoTest.testSetNome.executor": "Run",
     "JUnit.IngressouApplicationTests.executor": "Run",
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "kotlin-language-version-configured": "true",
-    "last_opened_file_path": "C:/Users/celo1/OneDrive/Área de Trabalho/PROJETOS/Ingressou222",
+    "last_opened_file_path": "C:/Users/celo1/OneDrive/Área de Trabalho/PROJETOS/Ingressou222JAVAFX",
     "project.structure.last.edited": "Modules",
     "project.structure.proportion": "0.0",
     "project.structure.side.proportion": "0.0",
@@ -76,7 +112,20 @@
       <recent name="com.ingressou.Ingressou" />
     </key>
   </component>
-  <component name="RunManager" selected="Application.com.ingressou.Ingressou.principal.IngressouApplication">
+  <component name="RunManager" selected="JUnit.EventoTest.testListar">
+    <configuration name="IngressouApplication (1)" type="Application" factoryName="Application" temporary="true" nameIsGenerated="true">
+      <option name="MAIN_CLASS_NAME" value="com.ingressou.Ingressou.IngressouApplication" />
+      <module name="Ingressou" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ingressou.Ingressou.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
     <configuration name="IngressouApplication" type="Application" factoryName="Application" nameIsGenerated="true">
       <option name="ALTERNATIVE_JRE_PATH" value="17" />
       <option name="ALTERNATIVE_JRE_PATH_ENABLED" value="true" />
@@ -112,7 +161,7 @@
         <option name="Make" enabled="true" />
       </method>
     </configuration>
-    <configuration name="IngressouApplicationTests" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+    <configuration name="EventoTest" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
       <module name="Ingressou" />
       <extension name="coverage">
         <pattern>
@@ -121,16 +170,67 @@
         </pattern>
       </extension>
       <option name="PACKAGE_NAME" value="com.ingressou.Ingressou" />
-      <option name="MAIN_CLASS_NAME" value="com.ingressou.Ingressou.IngressouApplicationTests" />
+      <option name="MAIN_CLASS_NAME" value="com.ingressou.Ingressou.EventoTest" />
       <option name="TEST_OBJECT" value="class" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EventoTest.testCalcularIngressosDisponiveisComTodosIngressosVendidos" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ingressou" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ingressou.Ingressou.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ingressou.Ingressou" />
+      <option name="MAIN_CLASS_NAME" value="com.ingressou.Ingressou.EventoTest" />
+      <option name="METHOD_NAME" value="testCalcularIngressosDisponiveisComTodosIngressosVendidos" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EventoTest.testListar" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ingressou" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ingressou.Ingressou.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ingressou.Ingressou" />
+      <option name="MAIN_CLASS_NAME" value="com.ingressou.Ingressou.EventoTest" />
+      <option name="METHOD_NAME" value="testListar" />
+      <option name="TEST_OBJECT" value="method" />
+      <method v="2">
+        <option name="Make" enabled="true" />
+      </method>
+    </configuration>
+    <configuration name="EventoTest.testSetNome" type="JUnit" factoryName="JUnit" temporary="true" nameIsGenerated="true">
+      <module name="Ingressou" />
+      <extension name="coverage">
+        <pattern>
+          <option name="PATTERN" value="com.ingressou.Ingressou.*" />
+          <option name="ENABLED" value="true" />
+        </pattern>
+      </extension>
+      <option name="PACKAGE_NAME" value="com.ingressou.Ingressou" />
+      <option name="MAIN_CLASS_NAME" value="com.ingressou.Ingressou.EventoTest" />
+      <option name="METHOD_NAME" value="testSetNome" />
+      <option name="TEST_OBJECT" value="method" />
       <method v="2">
         <option name="Make" enabled="true" />
       </method>
     </configuration>
     <recent_temporary>
       <list>
-        <item itemvalue="Application.com.ingressou.Ingressou.principal.IngressouApplication" />
-        <item itemvalue="JUnit.IngressouApplicationTests" />
+        <item itemvalue="JUnit.EventoTest.testListar" />
+        <item itemvalue="JUnit.EventoTest.testSetNome" />
+        <item itemvalue="JUnit.EventoTest" />
+        <item itemvalue="JUnit.EventoTest.testCalcularIngressosDisponiveisComTodosIngressosVendidos" />
+        <item itemvalue="Application.IngressouApplication (1)" />
       </list>
     </recent_temporary>
   </component>
@@ -151,26 +251,30 @@
       <option name="project" value="LOCAL" />
       <updated>1728867665967</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="Adicionadas todas as classes">
+      <option name="closed" value="true" />
+      <created>1728869677976</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1728869677976</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
+  </component>
+  <component name="Vcs.Log.Tabs.Properties">
+    <option name="TAB_STATES">
+      <map>
+        <entry key="MAIN">
+          <value>
+            <State />
+          </value>
+        </entry>
+      </map>
+    </option>
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="Adicionadas todas as classes" />
     <option name="LAST_COMMIT_MESSAGE" value="Adicionadas todas as classes" />
-  </component>
-  <component name="XDebuggerManager">
-    <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="java-method">
-          <url>file://$PROJECT_DIR$/Ingressou/src/test/java/com/ingressou/Ingressou/IngressouApplicationTests.java</url>
-          <line>9</line>
-          <properties class="com.ingressou.Ingressou.IngressouApplicationTests" method="contextLoads">
-            <option name="EMULATED" value="true" />
-            <option name="WATCH_EXIT" value="false" />
-          </properties>
-          <option name="timeStamp" value="1" />
-        </line-breakpoint>
-      </breakpoints>
-    </breakpoint-manager>
   </component>
 </project>
