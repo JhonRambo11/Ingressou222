@@ -10,9 +10,9 @@
 	</parent>
 	<groupId>com.ingressou</groupId>
 	<artifactId>Ingressou</artifactId>
-	<version>0.0.1-SNAPSHOT</version>
+	<version>0.0.1</version>
 	<name>Ingressou</name>
-	<description>Demo project for Spring Boot</description>
+	<description>Project sistema Ingressou</description>
 	<url/>
 	<licenses>
 		<license/>
@@ -67,6 +67,10 @@
 			<groupId>org.springframework.boot</groupId>
 			<artifactId>spring-boot-starter-test</artifactId>
 			<scope>test</scope>
+		</dependency>
+		<dependency>
+			<groupId>jakarta.annotation</groupId>
+			<artifactId>jakarta.annotation-api</artifactId>
 		</dependency>
 	</dependencies>
 
