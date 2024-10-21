@@ -1,4 +1,4 @@
-ALterados alguns campos do banco de dados
+Alterados alguns campos do banco de dados
 
 -- Banco de Dados para Sistema Ingressou
 -- Este sistema armazena dados relacionados a eventos, usuários, ingressos comprados, e pedidos.
