@@ -51,10 +51,20 @@ public class EventoController {
         return "Olá, mundo!";
     }
 
+    //Listar todos: /api/eventos/listar
+    //Filtrar por nome: /api/eventos/listar?nome=Festa
+    //Filtrar por local: /api/eventos/listar?localEvento=Arena
+    //Filtrar por data: /api/eventos/listar?data=2024-10-15
+    //Combinar filtros: /api/eventos/listar?nome=Festa&localEvento=Arena&data=2024-10-15
     @GetMapping("/listar")  // Mapeamento para /api/eventos/listar
-    public List<Evento> listarTodos() {
-        logger.info("Método listarTodos chamado!");
-        return eventoService.listarTodos(); // Certifique-se de que o serviço está implementado
+    public List<Evento> listarEventosFiltrados(
+            @RequestParam(required = false) String nome,
+            @RequestParam(required = false) String localEvento,
+            @RequestParam(required = false) String data) {
+
+        logger.info("Método listarEventosFiltrados chamado com nome={}, localEvento={}, data={}", nome, localEvento, data);
+
+        return eventoService.listarEventosFiltrados(nome, localEvento, data);
     }
 
     @GetMapping("/disponibilidade/{id}")  // Mapeamento para /api/eventos/disponibilidade/{id}

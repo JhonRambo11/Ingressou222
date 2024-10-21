@@ -1,8 +1,8 @@
 package com.ingressou.Ingressou.model;
 
 import jakarta.persistence.*;
-
 import java.math.BigDecimal;
+import java.util.ArrayList;
 import java.util.List;
 
 @Entity
@@ -12,53 +12,29 @@ public class TipoIngresso {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "CDTIPOINGRESSO")
-    private Integer idTipoIngresso;
+    private Integer id;
 
-    @ManyToOne
-    @JoinColumn(name = "CDEVENTO", nullable = false)
-    private Evento evento;
-
-    @Column(name = "NMTIPOINGRESSO", nullable = false)
-    private String nomeTipoIngresso;
-
-    @Column(name = "VLPRECOBASE", nullable = false)
+    @Column(name = "VLPRECOBASE")
     private BigDecimal precoBase;
 
-    @OneToMany(mappedBy = "tipoIngresso") // Relacionamento com Ingressos
-    private List<Ingressos> ingressos;
+    @Column(name = "NMTIPOINGRESSO") // Adicionando um campo para o nome do tipo de ingresso
+    private String nome;
+
+    // Usando @OneToMany para representar a relação com Ingresso
+    @OneToMany(mappedBy = "tipoIngresso", cascade = CascadeType.ALL)
+    private List<Ingresso> ingressos = new ArrayList<>();
+
 
     // Construtor padrão
     public TipoIngresso() {}
 
-    // Construtor com parâmetros
-    public TipoIngresso(String nomeTipoIngresso, BigDecimal precoBase) {
-        this.nomeTipoIngresso = nomeTipoIngresso;
-        this.precoBase = precoBase;
-    }
-
     // Getters e Setters
-    public Integer getIdTipoIngresso() {
-        return idTipoIngresso;
+    public Integer getId() {
+        return id;
     }
 
-    public void setIdTipoIngresso(Integer idTipoIngresso) {
-        this.idTipoIngresso = idTipoIngresso;
-    }
-
-    public Evento getEvento() {
-        return evento;
-    }
-
-    public void setEvento(Evento evento) {
-        this.evento = evento;
-    }
-
-    public String getNomeTipoIngresso() {
-        return nomeTipoIngresso;
-    }
-
-    public void setNomeTipoIngresso(String nomeTipoIngresso) {
-        this.nomeTipoIngresso = nomeTipoIngresso;
+    public void setId(Integer id) {
+        this.id = id;
     }
 
     public BigDecimal getPrecoBase() {
@@ -69,20 +45,23 @@ public class TipoIngresso {
         this.precoBase = precoBase;
     }
 
-    public List<Ingressos> getIngressos() {
+    public String getNome() {
+        return nome;
+    }
+
+    public void setNome(String nome) {
+        this.nome = nome;
+    }
+
+    public List<Ingresso> getIngressos() {
         return ingressos;
     }
 
-    public void setIngressos(List<Ingressos> ingressos) {
+    public void setIngressos(List<Ingresso> ingressos) {
         this.ingressos = ingressos;
     }
-
-    @Override
-    public String toString() {
-        return "TipoIngresso{" +
-                "idTipoIngresso=" + idTipoIngresso +
-                ", nomeTipoIngresso='" + nomeTipoIngresso + '\'' +
-                ", precoBase=" + precoBase +
-                '}';
+    public void addIngresso(Ingresso ingresso) {
+        ingressos.add(ingresso);
+        ingresso.setTipoIngresso(this); // Define o tipo de ingresso no ingresso
     }
 }
